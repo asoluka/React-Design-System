@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Button = ({ label }) => {
-    return React.createElement("button", null, label);
+const Button = ({ label, className }) => {
+    return React.createElement("button", { className: className }, label);
 };
 
 export { Button as default };
