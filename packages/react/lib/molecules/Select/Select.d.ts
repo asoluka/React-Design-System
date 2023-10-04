@@ -1,12 +1,25 @@
 import React from "react";
-interface SelectOption {
+export declare const KEY_CODES: {
+    ENTER: number;
+    SPACE: number;
+    DOWN_ARROW: number;
+    ESC: number;
+    UP_ARROW: number;
+};
+export interface SelectOption {
     label: string;
     value: string;
 }
-interface SelectProps {
+export interface RenderOptionProps {
+    isSelected: boolean;
+    option: SelectOption;
+    getOptionRecommendedProps: (overrideProps?: Object) => Object;
+}
+export interface SelectProps {
     onOptionSelected?: (option: SelectOption, optionIndex: number) => void;
     options?: SelectOption[];
     label?: string;
+    renderOption?: (props: RenderOptionProps) => React.ReactNode;
 }
 declare const Select: React.FunctionComponent<SelectProps>;
 export default Select;
